@@ -1,0 +1,80 @@
+.containerPrograms{
+    max-width: 100rem;
+}
+.containerPrograms > div{
+    width: 75%;
+}
+.imgAll{
+    height: 25rem;
+    object-fit: fill;
+    border-radius: 1rem;
+}
+
+.programs__content--element >div {
+    max-height: 180px;
+    overflow: hidden;
+
+}
+.programs__title > h4{
+    color: #C0207B;
+    font-weight: 500;
+    display: inline;
+    border-bottom: #C0207B solid 2px;
+}
+.programs__content--elementBig > a,
+.programs__content--elementShort > a{
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: 0px 10px 10px -6px rgb(58, 58, 58);
+}
+
+.programs__content--elementBig > a > img ,
+.programs__content--elementShort > a > img{
+    border-radius: 12px;
+    max-height: 25rem;
+    width: 100%;
+
+    transition: all .5s ease-in-out;
+}
+.programs__content--elementBig > a > img:hover,
+.programs__content--elementShort > a > img:hover{
+    transform: scale(1.04);
+}
+.programs__content--elementBig >h6{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width:auto;
+    max-width: 80%;
+    margin-left: 1rem;
+    bottom: 2rem;
+    font-size: 1.2rem;
+}
+.programs__content--elementShort >h6{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width:auto;
+    max-width: 80%;
+    margin-left: 1rem;
+    bottom: 2rem;
+    font-size: 1.2em;
+}
+@media screen and (max-width: 851px) {
+    .programs__content--elementBig >h6{
+        font-size: 1em;
+    }
+    .programs__content--elementShort >h6{
+        font-size: 1em;
+    }
+    .containerPrograms > div{
+        width: 90%;
+    }
+}
+

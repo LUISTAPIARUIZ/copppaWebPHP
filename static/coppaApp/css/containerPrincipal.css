@@ -1,0 +1,10 @@
+.contenedorPrincipal{
+    position: relative;
+    top: 5rem;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    background-color: #fff5f7;
+    background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}

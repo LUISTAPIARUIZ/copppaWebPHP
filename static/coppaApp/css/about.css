@@ -1,0 +1,77 @@
+.containerBreadCrumbs,
+.containerAbout,
+.containerHistory{
+    max-width: 100rem;
+}
+/*Estilos al seccion nosotros*/
+.containerHistory{
+    background-color: #494949;
+}
+.about__content--title{
+    color: #C0207B;
+}
+.about__logo figure img{
+    filter: drop-shadow(2px 4px 6px rgb(76, 75, 75));
+}
+
+
+
+
+/*Estilo para la seccion de historia*/
+.containerHistory__title h4{
+    color:white;
+    background-color: #C0207B;
+}
+.containerHistory__content{
+    height: 18rem;
+}
+.containerHistory__content--element{
+    background-color: white;
+    border-radius: 15px;
+}
+
+@media screen and (max-width: 576px) {
+    .containerHistory__content--element h6{
+        position: absolute;
+        color: white;
+        bottom: 2rem;
+        filter: drop-shadow(0 0 0.2rem  rgb(0, 0, 0));
+        font-size: 1.2rem;
+    }
+}
+
+.containerHistory__control{
+    height: 5rem;
+}
+.containerHistory__control--line{
+    height: 2px;
+    background-color: white;
+    justify-content: space-between;
+    z-index: 5;
+}
+.carroucelIndicator{
+    z-index: 15;
+}
+.carroucelIndicator li {
+    /* Oculta el número dentro del indicador */
+    color: transparent;
+}
+.carroucelIndicator li {
+    background-color: white; 
+    border-radius: 50%; 
+    width: 1.2rem; 
+    height: 1.2rem; 
+    margin: 0 5px; 
+    cursor: pointer; 
+}
+.carroucelIndicator div{
+    border: solid #fafafa00 2px;
+    border-radius: 50%; 
+    cursor: pointer; 
+}
+.carroucelIndicator div:hover{
+    border: solid #C0207B 2px;
+}
+.carroucelIndicator div:hover  .internalIndicator{
+    background-color: #C0207B;
+}

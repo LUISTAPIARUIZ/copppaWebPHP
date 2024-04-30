@@ -1,0 +1,40 @@
+.breadCrumbles,
+.containerProjects{
+    width: 100%;
+    max-width: 100rem;
+}
+.Projects__title h4 {
+    color: #C0207B;
+    border-bottom: #C0207B solid 2px;
+}
+.Projects__content > div > div > a {
+    border-radius: 15px;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    height: 100%;
+}
+.Projects__content > div > div > a > img{
+    border-radius: 12px;
+    width: 100%;
+    max-height: 22rem;
+    transition: all .5s ease-in-out;
+}
+.Projects__content > div > div > a > img:hover{
+    transform:scale(1.04);
+}
+.Projects__content > div > div >h6{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 100%;
+    text-overflow: ellipsis;
+    width:auto;
+    max-width: 80%;
+    margin-left: 1rem;
+    margin-bottom: 0;
+    bottom:1.8rem;
+    font-size: 1rem;
+}
+.Projects__content > div > div {
+    cursor: pointer;
+}

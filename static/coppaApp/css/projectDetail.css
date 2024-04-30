@@ -1,0 +1,8 @@
+.breadCrumbles,
+.containerProjectDetail{
+    width: 100%;
+    max-width: 100rem;
+}
+.projectDetail__title {
+    color: #C0207B;
+}

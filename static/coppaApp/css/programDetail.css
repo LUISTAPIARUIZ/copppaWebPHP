@@ -1,0 +1,116 @@
+.breadCrumbles,
+.containerProgramDetail{
+    width: 100%;
+    max-width: 100rem;
+}
+.breadCrumbles{
+    font-weight: 600;
+}
+.programDetailHeader{
+    max-height: 25rem;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 670px) {
+    .programDetailHeader__content {
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+.programDetailHeader__content--title{
+    
+}
+.programDetailHeader__content--btn{
+    border-radius: 2.5rem;
+    border: 2px solid #C0207B;
+    background-color: #ffffffe5;
+    transition: all .3s ease-in-out;
+}
+
+.programDetailHeader__content--btn:hover{
+    transform: scale(1.1);
+    background-color: #C0207B;
+    color: white;
+}
+.programDetailContent__back > a > div{
+    border-bottom:solid black 2px ;
+}
+.ProgramDetailContent__aside > div{
+    background-color: #DBDBDB;
+
+}
+.ProgramDetailContent__aside--content > a{
+    background-color: #F9F9F9;
+    text-decoration: none;
+    color: black;
+}
+.forInfoPrograma{
+    z-index: 100;
+    background-color: rgba(68, 68, 68, 0.575);
+    display: none;
+}
+.btn-solicitar{
+    border-radius:25px;
+    width: 10rem;
+    background-color: #C25282;
+    color: white;
+    border: none;
+}
+
+/*Estilos para la solicitud de informacion*/
+.formInfoProgram{
+    top:3.25rem;
+    display: none;
+    z-index:40;
+    background-color: rgba(0, 0, 0, 0.685);
+}
+#cerrarSolicitudPrograma{
+    right: 1rem;
+    top:1rem;
+}
+#cerrarSolicitudPrograma i{
+    color: rgb(234, 45, 76);
+    font-size: 1.5rem;
+}
+
+/*estilos para ventana de confirmacion*/
+.message_alert{
+    position: fixed;
+    z-index: 45;
+    top: 7rem;
+    right: 2rem;
+    color: rgb(97, 97, 97);
+    text-align: center;
+    transition: 2s;
+    box-shadow: 2px 5px 5px rgba(80, 80, 80, 0.5);
+    animation: slideIn 1s, slideOut 1s 2s;
+    background-color: #97fface3;
+}
+
+.hide{
+    display: none;
+}
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideOut {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}

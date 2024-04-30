@@ -1,0 +1,220 @@
+/* Estilos para el carrousel */
+.carousel-item img {
+    height: auto;
+  }
+.containerCarrousel{
+    max-width: 100rem;
+}
+
+/* Estilos para la vista previa de proyectos*/
+.containerViewProyects{
+    max-width: 100rem;
+    border-bottom: #C0207B 5px solid;
+    background-color: #EBEBEB;
+}
+.viewProyects{
+   min-height: auto;
+   display: grid;
+   gap: 1rem;
+   grid-template-columns:1fr;
+   grid-template-rows: 5rem 15rem 5rem;
+}
+.viewProyects__title{
+    color: #C0207B;
+}
+.viewProyects__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    grid-auto-rows: 16rem; /* Esto hace que cada fila ocupe toda la altura disponible */
+    gap: 32px;
+  }
+.viewProyects__btn button{
+     border: #C0207B 2px solid;
+     width: 9rem;
+     height: 3rem;
+     border-radius: 25px;
+     font-size: 1.3rem;
+     transition: all .5s ease-in-out;
+}
+.viewProyects__btn button:hover{
+    background-color: #C0207B;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 28px -8px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 28px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 28px -8px rgba(0,0,0,0.75);
+}
+.viewProyects__content--element{
+    box-shadow: 10px 10px 4px -1px rgba(0,0,0,0.42);
+    -webkit-box-shadow: 10px 10px 4px -1px rgba(0,0,0,0.42);
+    -moz-box-shadow: 10px 10px 4px -1px rgba(0,0,0,0.42);
+    overflow: hidden;
+}
+.viewProyects__content--element >a > figure > img{
+    transition: all .5s ease-in-out;
+}
+.viewProyects__content--element >a > figure > img:hover{
+    transform: scale(1.04);
+}
+
+.viewProyects__content--element >a > div{
+    bottom: 2rem;
+}
+
+/*Estilos para el eje central*/
+.containerCentralAxis{
+    height:auto;
+    max-width: 100rem;
+    padding: 5rem 10rem;
+}
+.centralAxis{
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: 5rem auto auto;
+}
+.centralAxis__title--main{
+    background-color: #C0207B;
+    color: white;
+}
+.centralAxis__Description{
+    font-size: 1.6rem;
+}
+.centralAxis__elements{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    font-size:1.5rem;
+}
+.centralAxis__elements div img{
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1.5rem;
+}
+/*Estilos para aliados estrategicos*/
+.containerStrategicAllies{
+    max-width:100rem;
+    height: auto;
+    min-height: 5rem;
+}
+.StrategicAllies{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 6rem auto;
+    background-color: #CCD0D1;
+}
+.StrategicAlliesTitle{
+    justify-content: center;
+    color: #C0207B;
+    height: 100%;
+    width: 70%;
+    text-decoration: none;
+}
+.StrategicAlliesTitle  h4 ,
+.StrategicAlliesTitle figure{
+    font-family: "Noto Sans", sans-serif;
+    font-weight:bold;
+    font-size: 2rem;
+    padding: 0 2.5rem;
+}
+.StrategicAlliesContent {
+    height: 0;
+    opacity: 0;
+    width: auto;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+
+}
+.StrategicAlliesContent.show {
+    opacity: 1;
+    height: auto;
+}
+.StrategicAlliesContent div{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: space-around;
+    min-height: 75%;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem;
+}
+.StrategicAlliesContent div figure{
+    height: 6rem;
+    width: auto;
+}
+
+/*Media querys */
+@media (min-width: 1100px) {
+    /*CARROUSEL */
+    .carousel-item img {
+        max-height: 65vh; 
+    }
+}
+@media (min-width: 1600px) {
+    /*CARROUSEL */
+    .carousel-item img {
+        max-height: 35rem; 
+    }
+}
+@media screen and (max-width: 1100px) {
+    /*CARROUSEL */
+    .carousel-item img {
+        max-height: 25rem; 
+    }
+    /*PROYECTOS */
+    .viewProyects{
+        min-height: auto;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns:1fr;
+        grid-template-rows: 5rem auto 5rem;
+        
+     }
+     /*EJE CENTRAL */
+     .containerCentralAxis{
+        padding: 5rem 2rem;
+    }
+     /*ALIADOS ESTRETEGICOS */
+    .StrategicAlliesTitle{
+        height: 100%;
+        width: 90%;
+    }
+    .StrategicAlliesTitle  h4 ,
+    .StrategicAlliesTitle figure{
+        font-size: 1.5rem;
+        padding: 0 1rem;
+    }
+    .StrategicAlliesContent div figure{
+        height: 5rem;
+    }
+    .StrategicAlliesContent {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 700px) {
+    /*CARROUSEL */
+
+    /*PROYECTOS */
+
+     /*EJE CENTRAL */
+     .containerCentralAxis{
+        padding: 3rem 1rem;
+    }
+    .centralAxis__Description{
+        font-size:1.1rem;
+    }
+     .centralAxis__elements{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 1rem;
+        font-size:1.1rem;
+    }
+     /*ALIADOS ESTRETEGICOS */
+     .StrategicAlliesContent {
+        padding: 0;
+        width: 100%;
+    }
+}

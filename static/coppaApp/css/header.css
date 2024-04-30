@@ -1,0 +1,106 @@
+/*Estilos para la cabecera*/
+header{
+    height: 5rem;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    z-index: 10;
+}
+.barNav{
+    height: 70%;
+    border-bottom: solid 2px  #da298d;
+    z-index: 1;
+    box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
+    
+}
+.navResponsive{
+    max-width:100rem;
+    margin: auto; 
+}
+.barraFecha{
+    height: 30%;
+    background-color: #C0207B;
+    color: white;
+    opacity: 1; 
+    z-index: 10;
+    transition: opacity 5s ease;
+    box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
+}
+
+.barraSeparadora{
+    background-color:#C0207B ;
+    width: 0.2rem;
+    height: 3rem;
+    margin: auto;
+    margin: 0 1rem;
+    border-radius:15px ;
+    
+}
+.logo-coppa{
+    width: 3rem;
+}
+.contenedorNombreCoppa{
+    color: #C0207B;
+}
+.nav-link {
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Posición de la barra baja */
+    left: 0;
+    width: 100%;
+    height: 3px; /* Grosor de la barra baja */
+    background-color: transparent; /* Color inicial de la barra baja */
+    border-radius: 15px;
+    transition: background-color 0.3s ease; /* Transición de color */
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    background-color: #C0207B; /* Color de la barra baja cuando se selecciona o se pasa el ratón por encima */
+}
+.iconnBars{
+    font-size: 2rem;
+    color: #C0207B;
+}
+
+
+/*Estilos del menu response */
+.menuResponse{
+    background-color: rgba(0, 0, 0, 0.847);
+    color: white;
+    top: -100vh;
+    z-index: 50;
+    height: 100vh;
+    transition: all .5s ease-in-out;
+}
+
+.showMenuResponse{
+    top: 3rem;
+}
+
+/* Estilos para la barra de desplazamiento en WebKit (Safari y Chrome) */
+body::-webkit-scrollbar {
+    width: 5px; /* Ancho de la barra de desplazamiento */
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo de la barra de desplazamiento */
+}
+
+body::-webkit-scrollbar-thumb {
+    background:#be4088; /* Color del "pulgar" de la barra de desplazamiento */
+    border-radius: 5px; /* Borde redondeado del "pulgar" */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cambio de color al pasar el cursor sobre el "pulgar" */
+}
