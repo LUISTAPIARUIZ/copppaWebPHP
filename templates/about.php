@@ -1,6 +1,3 @@
-{% extends 'home.html' %}
-{% load static %}
-{% block content %} 
 <section class="breadCrumbles m-auto">
     <div class="d-flex p-3 ">
         <a class="text-decoration-none px-2 text-dark cursor-pointer" href="{% url 'coppaApp:home' %}">Inicio</a>
@@ -16,7 +13,7 @@
             </div>
             <div class="about__logo m-auto ">
                 <figure class="w-100">
-                    <img class="w-100" src="{% static 'coppaApp/img/logo-coppaWeb.png'%}" alt="">
+                    <img class="w-100" src="static/coppaApp/img/logo-coppaWeb.png" alt="">
                 </figure>
             </div>
         </div>
@@ -97,4 +94,3 @@
             </ol>
         </div>
     </section>
-{% endblock %}

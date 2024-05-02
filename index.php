@@ -23,33 +23,37 @@
     
     <!--LinkDinamic-->  
     <?php
+    include ("config/conection.php");
     $request_path = $_SERVER['REQUEST_URI'];
     $base_url = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
-    $base_url .= "://".$_SERVER['HTTP_HOST'];
-
+    $base_url .= "://" . $_SERVER['HTTP_HOST'];
+    
     $title = ''; // Inicializamos la variable $title
     
-    if ($request_path == '/coppaWeb/') {
+    if ($request_path == '/coppaWeb/' || $request_path == '/coppaWeb/index.php?page=main') {
         echo '<script src="' . $base_url . '/COPPAWEB/static/coppaApp/js/main.js" defer></script>';
         echo '<link rel="stylesheet" type="text/css" href="' . $base_url . '/COPPAWEB/static/coppaApp/css/main.css">';
         $title = 'Coppa Consejo Peruano Para la Autogestión';
-    } elseif ($request_path == '/about/') {
+    } elseif ($request_path =='/coppaWeb/index.php?page=about') {
         echo '<script src="' . $base_url . '/static/coppaApp/js/about.js" defer></script>';
-        echo '<link rel="stylesheet" type="text/css" href="/static/coppaApp/css/about.css">';
+        echo '<link rel="stylesheet" type="text/css" href="' . $base_url . '/COPPAWEB/static/coppaApp/css/about.css">';
         $title = 'Nosotros | Coppa';
-    } elseif ($request_path == '/programs/') {
-        echo '<link rel="stylesheet" type="text/css" href="/static/coppaApp/css/programs.css">';
+    } elseif ($request_path == '/coppaWeb/index.php?page=programs') {
+        echo '<link rel="stylesheet" type="text/css" href="' . $base_url . '/COPPAWEB/static/coppaApp/css/programs.css">';
     } elseif ($request_path == '/projects/') {
         echo '<link rel="stylesheet" type="text/css" href="' . $base_url . '/static/coppaApp/css/projects.css">';
     } elseif ($request_path == '/contact/') {
         echo '<link rel="stylesheet" type="text/css" href="' . $base_url . '/static/coppaApp/css/contact.css">';
     }
-
+    
     echo '<title>' . $title . '</title>';
 ?>
 
 </head>
 <body class="min-vh-100">
+    <?php
+    echo $request_path;
+    ?>
     <!--Cabecera-->
     <header class="d-flex flex-column fixed-top ">
         <!-- Barra de navegación -->
@@ -76,26 +80,26 @@
                 </div>
                 <!-- lista del  menu -->
                 <div class="d-none d-lg-flex">
-                    <div class="collapse navbar-collapse " id="navbarNav2">
+                    <div class="collapse navbar-collapse" id="navbarNav2">
                         <ul class="navbar-nav">
                             <li class="nav-item me-2">
-                                <a  class="nav-link p-1 {% if request.path == '/' %}active{% endif %}" aria-current="page" href="{% url 'coppaApp:home' %}">Inicio</a>
+                                <a class="nav-link p-1 <?php if ($request_path == '/coppaWeb/' ||  $request_path == '/coppaWeb/index.php?page=main' ) echo 'active'; ?>" aria-current="page" href="index.php?page=main">Inicio</a>
                                 <div id="barra-baja-inicio" class="barra-baja"></div>
                             </li>
                             <li class="nav-item me-2">
-                                <a  class="nav-link p-1 {% if request.path == '/about/' %}active{% endif %}" href="{% url 'coppaApp:about' %}">Nosotros</a>
+                                <a class="nav-link p-1 <?php if ($request_path == '/coppaWeb/index.php?page=about') echo 'active'; ?>" href="index.php?page=about">Nosotros</a>
                                 <div id="barra-baja-nosotros" class="barra-baja"></div>
                             </li>
                             <li class="nav-item me-2">
-                                <a  class="nav-link p-1 {% if request.path == '/programs/' %}active{% endif %}" href="{% url 'coppaApp:programs' %}">Programas</a>
+                                <a class="nav-link p-1 <?php if ($request_path == '/coppaWeb/index.php?page=programs') echo 'active'; ?>" href="index.php?page=programs">Programas</a>
                                 <div id="barra-baja-programas" class="barra-baja"></div>
                             </li>
                             <li class="nav-item me-2">
-                                <a  class="nav-link p-1 {% if request.path == '/projects/' %}active{% endif %}" href="{% url 'coppaApp:projects' %}">Proyectos</a>
+                                <a class="nav-link p-1 <?php if ($request_path == '/projects/') echo 'active'; ?>" href="{% url 'coppaApp:projects' %}">Proyectos</a>
                                 <div id="barra-baja-proyectos" class="barra-baja"></div>
                             </li>
                             <li class="nav-item">
-                                <a  class="nav-link p-1 {% if request.path == '/contact/' %}active{% endif %}" href="{% url 'coppaApp:contact' %}">Contactar</a>
+                                <a class="nav-link p-1 <?php if ($request_path == '/contact/') echo 'active'; ?>" href="{% url 'coppaApp:contact' %}">Contactar</a>
                                 <div id="barra-baja-contactar" class="barra-baja"></div>
                             </li>
                         </ul>                        
@@ -139,8 +143,26 @@
     </div>
     <div class="contenedorPrincipal position-relative pb-5">
     <?php
-    include("templates/main.php");
-    ?>
+    // Verifica si se ha pasado el parámetro GET 'page'
+    if (isset($_GET['page'])) {
+        // Obtiene el valor del parámetro 'page'
+        $page = $_GET['page'];
+
+        // Verifica si la página es 'main' y luego incluye el archivo main.php
+        if ($page == 'main') {
+            include("templates/main.php");
+            
+        }else if($page == 'about'){
+            include("templates/about.php"); 
+        }else if($page == 'programs'){
+            include("templates/programs.php"); 
+        }
+        // Puedes agregar más condiciones para otras páginas aquí
+    } else {
+        // Si no se pasa ningún parámetro GET, incluye por defecto el archivo main.php
+        include("templates/main.php");
+    }
+?>
     
     </div>
     <!--Pie de pagina-->
