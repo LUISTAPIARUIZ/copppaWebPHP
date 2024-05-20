@@ -6,9 +6,9 @@ $result = mysqli_query($con, $sql);
 
 <section class="breadCrumbles m-auto">
     <div class="d-flex p-3">
-        <a class="text-decoration-none px-2 text-dark cursor-pointer" href="url_coppaApp_home.php">Inicio</a>
+        <a class="text-decoration-none px-2 text-dark cursor-pointer" href="index.php?page=main">Inicio</a>
         <p class="m-0">/</p>
-        <a class="text-decoration-none px-2 text-dark cursor-pointer" href="url_coppaApp_programs.php">Programas</a>
+        <a class="text-decoration-none px-2 text-dark cursor-pointer" href="index.php?page=programs">Programas</a>
     </div>
 </section>
 
@@ -29,7 +29,7 @@ $result = mysqli_query($con, $sql);
                     } else {
                         echo '<div class="col-md-6 programs__content--elementShort position-relative">';
                     }
-                    echo '<a href="url_coppaApp_program_detail.php?program_id=' . $row['id'] . '">';
+                    echo '<a href="index.php?page=program_detail&program_id=' . $row['id'] . '">';
                     echo '<img src="static/coppaApp/img/inaug.jpg" alt="" class="img-fluid equal-size">';
                     echo '</a>';
                     echo '<h6 class="position-absolute overflow-hidden px-1 py-1 px-sm-2 py-sm-3 px-md-4 py-md-3">' . $row['name'] . '</h6>';

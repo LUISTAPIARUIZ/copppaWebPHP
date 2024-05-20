@@ -1,11 +1,9 @@
-{% extends 'home.html' %}
-{% load static %}
-{% block content %} 
+
 <section class="breadCrumbles m-auto">
     <div class="d-flex p-3 ">
-        <a class="text-decoration-none px-2 text-dark cursor-pointer" href="{% url 'coppaApp:home' %}">Inicio</a>
+        <a class="text-decoration-none px-2 text-dark cursor-pointer"  href="index.php?page=main">Inicio</a>
         <p class="m-0">/</p>
-        <a class="text-decoration-none px-2 text-dark cursor-pointer" href="{% url 'coppaApp:contact' %}">Contactar</a>
+        <a class="text-decoration-none px-2 text-dark cursor-pointer" href="index.php?page=contact">Contactar</a>
     </div>
 </section>
 <section class="containerContact m-auto w-100 h-auto d-flex justify-content-center">
@@ -17,7 +15,6 @@
             </div>
             <div class="wow fadeIn" data-wow-delay="0.3s">
                 <form id="formContact" >
-                    {% csrf_token %}
                     <div class="row g-4  ">
                         <div class="col-md-12">
                             <div class="form-floating">

@@ -8,6 +8,7 @@
     <link rel="icon" href="/static/coppaApp/img/logo-coppaWeb.png" type="image/png">
     <!--LinkStatic-->
     <script src="static/coppaApp/js/home.js"  defer></script>
+    <script src="static/coppaApp/js/programDetail.js"  defer></script>
     <link rel="stylesheet" type="text/css" href="static/coppaApp/css/header.css">
     <link rel="stylesheet" type="text/css" href="static/coppaApp/css/containerPrincipal.css">
     <link rel="stylesheet" type="text/css" href="static/coppaApp/css/programDetail.css">
@@ -35,15 +36,15 @@
         echo '<link rel="stylesheet" type="text/css" href="' . $base_url . '/COPPAWEB/static/coppaApp/css/main.css">';
         $title = 'Coppa Consejo Peruano Para la Autogestión';
     } elseif ($request_path =='/coppaWeb/index.php?page=about') {
-        echo '<script src="' . $base_url . '/static/coppaApp/js/about.js" defer></script>';
+        echo '<script src="' . $base_url . '/COPPAWEB/static/coppaApp/js/about.js" defer></script>';
         echo '<link rel="stylesheet" type="text/css" href="' . $base_url . '/COPPAWEB/static/coppaApp/css/about.css">';
         $title = 'Nosotros | Coppa';
     } elseif ($request_path == '/coppaWeb/index.php?page=programs') {
         echo '<link rel="stylesheet" type="text/css" href="' . $base_url . '/COPPAWEB/static/coppaApp/css/programs.css">';
-    } elseif ($request_path == '/projects/') {
-        echo '<link rel="stylesheet" type="text/css" href="' . $base_url . '/static/coppaApp/css/projects.css">';
-    } elseif ($request_path == '/contact/') {
-        echo '<link rel="stylesheet" type="text/css" href="' . $base_url . '/static/coppaApp/css/contact.css">';
+    }  elseif ($request_path == '/coppaWeb/index.php?page=projects') {
+        echo '<link rel="stylesheet" type="text/css" href="' . $base_url . '/COPPAWEB/static/coppaApp/css/projects.css">';
+    } elseif ($request_path == '/coppaWeb/index.php?page=contact') {
+        echo '<link rel="stylesheet" type="text/css" href="' . $base_url . '/COPPAWEB/static/coppaApp/css/contact.css">';
     }
     
     echo '<title>' . $title . '</title>';
@@ -51,9 +52,6 @@
 
 </head>
 <body class="min-vh-100">
-    <?php
-    echo $request_path;
-    ?>
     <!--Cabecera-->
     <header class="d-flex flex-column fixed-top ">
         <!-- Barra de navegación -->
@@ -95,11 +93,11 @@
                                 <div id="barra-baja-programas" class="barra-baja"></div>
                             </li>
                             <li class="nav-item me-2">
-                                <a class="nav-link p-1 <?php if ($request_path == '/projects/') echo 'active'; ?>" href="{% url 'coppaApp:projects' %}">Proyectos</a>
+                                <a class="nav-link p-1 <?php if ($request_path == '/coppaWeb/projects/') echo 'active'; ?>" href="index.php?page=projects">Proyectos</a>
                                 <div id="barra-baja-proyectos" class="barra-baja"></div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link p-1 <?php if ($request_path == '/contact/') echo 'active'; ?>" href="{% url 'coppaApp:contact' %}">Contactar</a>
+                                <a class="nav-link p-1 <?php if ($request_path == '/coppaWeb/contact/') echo 'active'; ?>" href="index.php?page=contact">Contactar</a>
                                 <div id="barra-baja-contactar" class="barra-baja"></div>
                             </li>
                         </ul>                        
@@ -124,19 +122,19 @@
         <div class="contenOpcionResponse w-100 h-100 d-flex flex-column my-5 align-items-center">
             <ul class="list-unstyled text-center my-5">
                 <li class="p-2 fs-4 my-1">
-                    <a  class="text-decoration-none text-white p-1 " href="{% url 'coppaApp:home' %}">Inicio</a>
+                    <a  class="text-decoration-none text-white p-1 " href="index.php?page=main">Inicio</a>
                     </li>
                 <li class="p-2 fs-4 my-1">
-                    <a class="text-decoration-none text-white p-1 " href="{% url 'coppaApp:about' %}">Nosotros</a>
+                    <a class="text-decoration-none text-white p-1 " href="index.php?page=about">Nosotros</a>
                     </li>
                 <li class="p-2 fs-4 my-1">
-                    <a class="text-decoration-none text-white p-1 " href="{% url 'coppaApp:programs' %}">Programas</a>
+                    <a class="text-decoration-none text-white p-1 " href="index.php?page=programs">Programas</a>
                     </li>
                 <li class="p-2 fs-4 my-1">
-                    <a  class="text-decoration-none text-white p-1 " href="{% url 'coppaApp:projects' %}">Proyectos</a>
+                    <a  class="text-decoration-none text-white p-1 " href="index.php?page=projects">Proyectos</a>
                     </li>
                 <li class="p-2 fs-4 my-1">
-                    <a  class="text-decoration-none text-white p-1 {% if request.path == '/programs/' %}active{% endif %}" href="{% url 'coppaApp:contact' %}">Contactar</a>
+                    <a  class="text-decoration-none text-white p-1 " href="index.php?page=contact">Contactar</a>
                     </li>
             </ul>
         </div>
@@ -149,15 +147,39 @@
         $page = $_GET['page'];
 
         // Verifica si la página es 'main' y luego incluye el archivo main.php
+        // Verifica y maneja cada caso
         if ($page == 'main') {
             include("templates/main.php");
-            
-        }else if($page == 'about'){
+        } else if ($page == 'about') {
             include("templates/about.php"); 
-        }else if($page == 'programs'){
+        } else if ($page == 'programs') {
             include("templates/programs.php"); 
+        } else if ($page == 'projects') {
+            include("templates/projects.php"); 
+        } else if ($page == 'contact') {
+            include("templates/contact.php"); 
+        } else if ($page == 'project_detail' && isset($_GET['project_id'])) {
+            // Verifica si el parámetro 'project_id' está presente y es un número positivo
+            $project_id = $_GET['project_id'];
+            if (is_numeric($project_id) && intval($project_id) > 0) {
+                include("templates/project_detail.php");
+            } else {
+                // Manejo de error si 'project_id' no es un número positivo válido
+                echo "ID de proyecto no válido.";
+            }
+        } else if ($page == 'program_detail' && isset($_GET['program_id'])) {
+            // Verifica si el parámetro 'project_id' está presente y es un número positivo
+            $project_id = $_GET['program_id'];
+            if (is_numeric($project_id) && intval($project_id) > 0) {
+                include("templates/program_detail.php");
+            } else {
+                // Manejo de error si 'project_id' no es un número positivo válido
+                echo "ID de proyecto no válido.";
+            }
+        } else {
+            // Manejo de error si la página solicitada no existe
+            echo "Página no encontrada.";
         }
-        // Puedes agregar más condiciones para otras páginas aquí
     } else {
         // Si no se pasa ningún parámetro GET, incluye por defecto el archivo main.php
         include("templates/main.php");

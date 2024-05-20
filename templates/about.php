@@ -1,8 +1,8 @@
 <section class="breadCrumbles m-auto">
     <div class="d-flex p-3 ">
-        <a class="text-decoration-none px-2 text-dark cursor-pointer" href="{% url 'coppaApp:home' %}">Inicio</a>
+        <a class="text-decoration-none px-2 text-dark cursor-pointer"  href="index.php?page=main">Inicio</a>
         <p class="m-0">/</p>
-        <a class="text-decoration-none px-2 text-dark cursor-pointer" href="{% url 'coppaApp:about' %}">Nosotros</a>
+        <a class="text-decoration-none px-2 text-dark cursor-pointer" href="index.php?page=about">Nosotros</a>
     </div>
 </section>
     <section class="containerAbout w-100 h-auto m-auto">
@@ -28,7 +28,7 @@
                     <div class="historyFrame h-100">
                         <div class="containerHistory__content--element d-flex justify-content-center align-items-center m-auto h-100 p-3 col-xxl-6 col-xl-7 col-lg-8 col-md-9 col-sm-11 col-11 position-relative">
                             <figure class="m-0  h-100 col-12 col-sm-7  col-lg-6">
-                                <img src="{% static 'coppaApp/img/inaug.jpg'%}" alt="" style="width: 100%; height: 100%; object-fit: cover;" >
+                                <img src="static/coppaApp/img/inaug.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;" >
                             </figure>
                             <h6 class="m-0 px-5 text-center m-auto col-sm-3  col-lg-6">Titulo del evento 1</h6>
                         </div>
@@ -38,9 +38,9 @@
                     <div class="historyFrame h-100">
                         <div class="containerHistory__content--element d-flex justify-content-center align-items-center m-auto h-100 p-3 col-xxl-6 col-xl-7 col-lg-8 col-md-9 col-sm-11 col-11 position-relative">
                             <figure class="m-0  h-100 col-12 col-sm-7  col-lg-6">
-                                <img src="{% static 'coppaApp/img/inaug.jpg'%}" alt="" style="width: 100%; height: 100%; object-fit: cover;" >
+                                <img src="static/coppaApp/img/inaug.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;" >
                             </figure>
-                            <h6 class="m-0 px-5 text-center m-auto col-sm-3  col-lg-6">Titulo del evento 1</h6>
+                            <h6 class="m-0 px-5 text-center m-auto col-sm-3  col-lg-6">Titulo del evento 2</h6>
                         </div>
                     </div>
                 </div>
@@ -48,9 +48,9 @@
                     <div class="historyFrame h-100">
                         <div class="containerHistory__content--element d-flex justify-content-center align-items-center m-auto h-100 p-3 col-xxl-6 col-xl-7 col-lg-8 col-md-9 col-sm-11 col-11 position-relative">
                             <figure class="m-0  h-100 col-12 col-sm-7  col-lg-6">
-                                <img src="{% static 'coppaApp/img/inaug.jpg'%}" alt="" style="width: 100%; height: 100%; object-fit: cover;" >
+                                <img src="static/coppaApp/img/inaug.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;" >
                             </figure>
-                            <h6 class="m-0 px-5 text-center m-auto col-sm-3  col-lg-6">Titulo del evento 1</h6>
+                            <h6 class="m-0 px-5 text-center m-auto col-sm-3  col-lg-6">Titulo del evento 3</h6>
                         </div>
                     </div>
                 </div>
@@ -58,9 +58,9 @@
                     <div class="historyFrame h-100">
                         <div class="containerHistory__content--element d-flex justify-content-center align-items-center m-auto h-100 p-3 col-xxl-6 col-xl-7 col-lg-8 col-md-9 col-sm-11 col-11 position-relative">
                             <figure class="m-0  h-100 col-12 col-sm-7  col-lg-6">
-                                <img src="{% static 'coppaApp/img/inaug.jpg'%}" alt="" style="width: 100%; height: 100%; object-fit: cover;" >
+                                <img src="static/coppaApp/img/inaug.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;" >
                             </figure>
-                            <h6 class="m-0 px-5 text-center m-auto col-sm-3  col-lg-6">Titulo del evento 1</h6>
+                            <h6 class="m-0 px-5 text-center m-auto col-sm-3  col-lg-6">Titulo del evento 4</h6>
                         </div>
                     </div>
                 </div>

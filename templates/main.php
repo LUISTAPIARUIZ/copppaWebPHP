@@ -58,7 +58,7 @@
     <div class="viewProyects__content w-100 h-100">
       <!-- PROYECTO 1-->
       <div class="position-relative d-flex flex-column justify-content-end viewProyects__content--element">
-        <a href="{% url 'coppaApp:project_detail' project_id=1 %}" class="position-relative d-flex flex-column justify-content-end cursor-pointer w-100 h-100">
+        <a href="index.php?page=project_detail&project_id=1" class="position-relative d-flex flex-column justify-content-end cursor-pointer w-100 h-100">
           <figure class="m-0 w-100 h-100 p-0">
             <img class="w-100 h-100" src="static/coppaApp/img/inaug.jpg" alt="">
           </figure>
@@ -69,7 +69,7 @@
       </div>
       <!-- PROYECTO 2 -->
       <div class="position-relative d-flex flex-column justify-content-end viewProyects__content--element">
-        <a href="{% url 'coppaApp:project_detail' project_id=2 %}" class="position-relative d-flex flex-column justify-content-end cursor-pointer w-100 h-100">
+        <a href="index.php?page=project_detail&project_id=2" class="position-relative d-flex flex-column justify-content-end cursor-pointer w-100 h-100">
           <figure class="m-0 w-100 h-100 p-0">
             <img class="w-100 h-100" src="static/coppaApp/img/inaug.jpg"  alt="">
           </figure>
@@ -80,7 +80,7 @@
       </div>
       <!-- PROYECTO 3 -->
       <div class="position-relative d-flex flex-column justify-content-end viewProyects__content--element">
-        <a href="{% url 'coppaApp:project_detail' project_id=3 %}" class="position-relative d-flex flex-column justify-content-end cursor-pointer w-100 h-100">
+        <a href="index.php?page=project_detail&project_id=3" class="position-relative d-flex flex-column justify-content-end cursor-pointer w-100 h-100">
           <figure class="m-0 w-100 h-100 p-0">
             <img class="w-100 h-100" src="static/coppaApp/img/inaug.jpg"  alt="">
           </figure>
